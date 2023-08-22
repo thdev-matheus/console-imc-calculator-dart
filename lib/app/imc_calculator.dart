@@ -5,8 +5,10 @@ import 'package:imc_calculator_dart/utils/time.dart';
 
 class IMCCalculator {
   static Future<void> start() async {
-    // await hello();
-    await form();
+    await hello();
+    Person person = await form();
+
+    print(person.getStatus());
   }
 
   static Future<void> hello() async {
@@ -25,46 +27,49 @@ class IMCCalculator {
   }
 
   static Future<Person> form() async {
-    // String name = Console.getReply('Para começar, digite o seu nome: ');
-    // await Time.sleep(1);
-    // print('Carregando');
-    // await Time.sleep(1);
-    // print('.');
-    // await Time.sleep(1);
-    // print('.');
-    // await Time.sleep(1);
-    // print('.');
-    // await Time.sleep(1);
+    String name = await Console.getTextReply('Digite o seu nome: ');
+    await Time.sleep(1);
+    print('Carregando');
+    await Time.sleep(1);
+    print('.');
+    await Time.sleep(1);
+    print('.');
+    await Time.sleep(1);
+    print('.');
+    await Time.sleep(1);
 
-    // print('=*=' * 10);
-    // print('Olá, $name.');
-    // await Time.sleep(1);
-    // print('É muito bom ter você aqui.');
-    // await Time.sleep(2);
+    print('=*=' * 10);
+    print('Olá, $name.');
+    await Time.sleep(1);
+    print('É muito bom ter você aqui.');
+    await Time.sleep(2);
 
-    var weight = await Console.getDoubleReply('Digite aqui o seu peso: ');
-    print(weight);
-    // await Time.sleep(1);
-    // print('salvando');
-    // await Time.sleep(1);
-    // print('.');
-    // await Time.sleep(1);
-    // print('.');
-    // await Time.sleep(1);
-    // print('.');
-    // await Time.sleep(2);
+    double weight = await Console.getDoubleReply('Digite aqui o seu peso: ');
+    await Time.sleep(1);
+    print('salvando');
+    await Time.sleep(1);
+    print('.');
+    await Time.sleep(1);
+    print('.');
+    await Time.sleep(1);
+    print('.');
+    await Time.sleep(2);
 
-    // String height = Console.getReply('Ótimo, agora digite a sua altura: ');
-    // await Time.sleep(1);
-    // print('salvando');
-    // await Time.sleep(1);
-    // print('.');
-    // await Time.sleep(1);
-    // print('.');
-    // await Time.sleep(1);
-    // print('.');
-    // await Time.sleep(1);
+    double height = await Console.getDoubleReply('Digite a sua altura: ');
+    await Time.sleep(1);
+    print('salvando');
+    await Time.sleep(1);
+    print('.');
+    await Time.sleep(1);
+    print('.');
+    await Time.sleep(1);
+    print('.');
+    await Time.sleep(1);
 
-    return Person(name: 'theus', weight: 74.5, height: 1.69);
+    return Person(
+      name: name,
+      weight: weight,
+      height: height,
+    );
   }
 }

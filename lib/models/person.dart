@@ -33,7 +33,7 @@ class Person {
   double getImc() => _imc;
 
   void setStatus() {
-    switch (_imc) {
+    switch (getImc()) {
       case < 16:
         _status = Status.severeThinness;
         break;
