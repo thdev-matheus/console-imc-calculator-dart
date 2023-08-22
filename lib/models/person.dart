@@ -1,4 +1,3 @@
-// imc = peso / altura²
 import 'dart:math' as math;
 import 'package:imc_calculator_dart/enum/status.dart';
 
@@ -33,14 +32,6 @@ class Person {
 
   double getImc() => _imc;
 
-// < 16 Magreza grave
-// 16 a < 17 Magreza moderada
-// 17 a < 18,5 Magreza leve
-// 18,5 a < 25 Saudável
-// 25 a < 30 Sobrepeso
-// 30 a < 35 Obesidade grau 1
-// 35 a < 40 Obesidade grau 2 (severa)
-// >= 40 Obesidade grau 2 (mórbida)
   void setStatus() {
     switch (_imc) {
       case < 16:
