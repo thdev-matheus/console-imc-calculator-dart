@@ -6,17 +6,16 @@ import 'package:imc_calculator_dart/utils/time.dart';
 class IMCCalculator {
   static Future<void> start() async {
     await hello();
+
     Person person = await form();
 
-    print(person.getStatus());
+    showResult(person);
   }
 
   static Future<void> hello() async {
-    print('Olá!');
-    await Time.sleep(1);
-
     print('Bem-vindo(a) à calculadora de IMC.');
     await Time.sleep(2);
+    Console.blankSpace(2);
 
     print('Para começarmos, pedirei alguns dados a você');
     await Time.sleep(1);
@@ -24,52 +23,38 @@ class IMCCalculator {
     await Time.sleep(2);
     print('Vamos começar?');
     await Time.sleep(2);
+    Console.blankSpace(2);
   }
 
   static Future<Person> form() async {
     String name = await Console.getTextReply('Digite o seu nome: ');
-    await Time.sleep(1);
-    print('Carregando');
-    await Time.sleep(1);
-    print('.');
-    await Time.sleep(1);
-    print('.');
-    await Time.sleep(1);
-    print('.');
-    await Time.sleep(1);
+    Console.blankSpace(1);
+    await Console.showLoad('Carregando...');
 
     print('=*=' * 10);
     print('Olá, $name.');
     await Time.sleep(1);
     print('É muito bom ter você aqui.');
+    print('=*=' * 10);
     await Time.sleep(2);
+    Console.blankSpace(2);
 
     double weight = await Console.getDoubleReply('Digite aqui o seu peso: ');
-    await Time.sleep(1);
-    print('salvando');
-    await Time.sleep(1);
-    print('.');
-    await Time.sleep(1);
-    print('.');
-    await Time.sleep(1);
-    print('.');
-    await Time.sleep(2);
+    Console.blankSpace(1);
+    await Console.showLoad('Salvando...');
 
     double height = await Console.getDoubleReply('Digite a sua altura: ');
-    await Time.sleep(1);
-    print('salvando');
-    await Time.sleep(1);
-    print('.');
-    await Time.sleep(1);
-    print('.');
-    await Time.sleep(1);
-    print('.');
-    await Time.sleep(1);
+    Console.blankSpace(1);
+    await Console.showLoad('Salvando...');
 
     return Person(
       name: name,
       weight: weight,
       height: height,
     );
+  }
+
+  static Future<void> showResult(Person person) async {
+    print('=*=' * 10);
   }
 }

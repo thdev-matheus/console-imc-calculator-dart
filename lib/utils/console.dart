@@ -48,4 +48,22 @@ class Console {
       }
     } while (true);
   }
+
+  static Future<void> showLoad(String text) async {
+    await Time.sleep(1);
+    print(text);
+    await Time.sleep(1);
+    print('.');
+    await Time.sleep(1);
+    print('.');
+    await Time.sleep(1);
+    print('.');
+    await Time.sleep(1);
+  }
+
+  static void blankSpace(int lines) {
+    for (var i = 0; i < lines; i++) {
+      print('');
+    }
+  }
 }
