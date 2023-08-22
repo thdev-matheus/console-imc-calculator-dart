@@ -56,5 +56,17 @@ class IMCCalculator {
 
   static Future<void> showResult(Person person) async {
     print('=*=' * 10);
+    await Time.sleep(1);
+    print('Nome: ${person.getName()}.');
+    await Time.sleep(1);
+    print('Peso: ${person.getWeight()}.');
+    await Time.sleep(1);
+    print('Altura: ${person.getHeight()}.');
+    await Time.sleep(1);
+    print('IMC: ${person.getImc()}.');
+    await Time.sleep(1);
+    print(person.getName()); //mensagem
+    print('=*=' * 10);
+    Console.blankSpace(2);
   }
 }
