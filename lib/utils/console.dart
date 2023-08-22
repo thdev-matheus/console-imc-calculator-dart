@@ -19,8 +19,8 @@ class Console {
           throw DoubleException();
         }
         return line;
-      } catch (e) {
-        print(e);
+      } on DoubleException {
+        print(DoubleException().toString());
         await Time.sleep(1);
 
         print('Por exemplo: 68.7');
