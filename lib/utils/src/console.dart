@@ -1,8 +1,6 @@
 import 'dart:io';
-import 'package:imc_calculator_dart/exceptions/void.exception.dart';
-import 'package:imc_calculator_dart/utils/color_text.dart';
-import 'package:imc_calculator_dart/utils/time.dart';
-import 'package:imc_calculator_dart/exceptions/double.exception.dart';
+import 'package:imc_calculator_dart/exceptions/exceptions.dart';
+import 'package:imc_calculator_dart/utils/utils.dart';
 
 class Console {
   static Future<String> getTextReply(String text) async {

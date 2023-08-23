@@ -1,8 +1,6 @@
 // import 'package:imc_calculator_dart/models/person.dart';
 import 'package:imc_calculator_dart/models/person.dart';
-import 'package:imc_calculator_dart/utils/color_text.dart';
-import 'package:imc_calculator_dart/utils/console.dart';
-import 'package:imc_calculator_dart/utils/time.dart';
+import 'package:imc_calculator_dart/utils/utils.dart';
 
 class IMCCalculator {
   static Future<void> start() async {
