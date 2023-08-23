@@ -1,6 +1,6 @@
 import 'package:imc_calculator_dart/models/person.dart';
 import 'package:test/test.dart';
-import './mocks.dart';
+import '../mocks.dart';
 
 void main() {
   test('Criação de uma instância Person', () {
