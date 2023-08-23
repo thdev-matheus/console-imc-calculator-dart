@@ -105,8 +105,11 @@ class Person {
     }
   }
 
-  double calculateImc(double weight, double height) =>
-      weight / (math.pow(height, 2));
+  double calculateImc(double weight, double height) {
+    double imc = weight / (math.pow(height, 2));
+    String fixedImc = imc.toStringAsFixed(1);
+    return double.parse(fixedImc);
+  }
 
   Person({
     required String name,
