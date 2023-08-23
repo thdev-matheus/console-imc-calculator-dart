@@ -94,13 +94,14 @@ class IMCCalculator {
   }
 
   static Future<void> farewell() async {
-    print('Bom, é isso.');
+    print(ColorText.yellow('Bom, é isso.'));
     await Time.sleep(1);
-    print('Muito obrigado por utilizar a calculadora IMC');
+    print(ColorText.yellow(
+        'Muito obrigado por utilizar a ${ColorText.magenta('Calculadora de IMC')}'));
     await Time.sleep(1);
-    print('Siga o desenvolvedor no Linkedin:');
+    print(ColorText.yellow('Siga o desenvolvedor no Linkedin:'));
     await Time.sleep(1);
-    print('https://www.linkedin.com/in/th-matheus/');
+    print(ColorText.cyan('https://www.linkedin.com/in/th-matheus/'));
     await Time.sleep(1);
   }
 }
