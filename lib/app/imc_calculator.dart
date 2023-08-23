@@ -9,11 +9,15 @@ class IMCCalculator {
 
     Person person = await form();
 
-    showResult(person);
+    await showResult(person);
+
+    await farewell();
   }
 
   static Future<void> hello() async {
     print('Bem-vindo(a) à calculadora de IMC.');
+    await Time.sleep(1);
+    print('Eu me chamo \x1B[34mTheus\x1B[0m e vou te ajudar neste processo.');
     await Time.sleep(2);
     Console.blankSpace(2);
 
@@ -68,5 +72,17 @@ class IMCCalculator {
     print(person.getMessage()); //mensagem
     print('=*=' * 10);
     Console.blankSpace(2);
+    await Time.sleep(2);
+  }
+
+  static Future<void> farewell() async {
+    print('Bom, é isso.');
+    await Time.sleep(1);
+    print('Muito obrigado por utilizar a calculadora IMC');
+    await Time.sleep(1);
+    print('Siga o desenvolvedor no Linkedin:');
+    await Time.sleep(1);
+    print('https://www.linkedin.com/in/th-matheus/');
+    await Time.sleep(1);
   }
 }
