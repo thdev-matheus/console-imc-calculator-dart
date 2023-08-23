@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:imc_calculator_dart/exceptions/void.exception.dart';
+import 'package:imc_calculator_dart/utils/color_text.dart';
 import 'package:imc_calculator_dart/utils/time.dart';
 import 'package:imc_calculator_dart/exceptions/double.exception.dart';
 
@@ -51,13 +52,13 @@ class Console {
 
   static Future<void> showLoad(String text) async {
     await Time.sleep(1);
-    print(text);
+    print(ColorText.yellow(text));
     await Time.sleep(1);
-    print('.');
+    print(ColorText.yellow('.'));
     await Time.sleep(1);
-    print('.');
+    print(ColorText.yellow('.'));
     await Time.sleep(1);
-    print('.');
+    print(ColorText.yellow('.'));
     await Time.sleep(1);
   }
 

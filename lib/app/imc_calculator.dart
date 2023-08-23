@@ -16,7 +16,7 @@ class IMCCalculator {
   }
 
   static Future<void> hello() async {
-    print('Bem-vindo(a) à calculadora de IMC.');
+    print('Bem-vindo(a) à ${ColorText.magenta('Calculadora de IMC')}.');
     await Time.sleep(1);
     print(
         'Eu me chamo ${ColorText.cyan('Theus')} e vou te ajudar neste processo.');
@@ -33,23 +33,26 @@ class IMCCalculator {
   }
 
   static Future<Person> form() async {
-    String name = await Console.getTextReply('Digite o seu nome: ');
+    String name = await Console.getTextReply(
+        'Digite o seu ${ColorText.yellow('nome')}: ');
     Console.blankSpace(1);
     await Console.showLoad('Carregando...');
 
-    print('=*=' * 10);
-    print('Olá, $name.');
+    print(ColorText.green('=*=') * 10);
+    print(ColorText.green('Olá, $name.'));
     await Time.sleep(1);
-    print('É muito bom ter você aqui.');
-    print('=*=' * 10);
+    print(ColorText.green('É muito bom ter você aqui.'));
+    print(ColorText.green('=*=') * 10);
     await Time.sleep(2);
     Console.blankSpace(2);
 
-    double weight = await Console.getDoubleReply('Digite aqui o seu peso: ');
+    double weight = await Console.getDoubleReply(
+        'Digite aqui o seu ${ColorText.yellow('peso')}: ');
     Console.blankSpace(1);
     await Console.showLoad('Salvando...');
 
-    double height = await Console.getDoubleReply('Digite a sua altura: ');
+    double height = await Console.getDoubleReply(
+        'Digite a sua ${ColorText.yellow('altura')}: ');
     Console.blankSpace(1);
     await Console.showLoad('Salvando...');
 
@@ -61,18 +64,31 @@ class IMCCalculator {
   }
 
   static Future<void> showResult(Person person) async {
-    print('=*=' * 10);
+    print(ColorText.green('Resultado'));
     await Time.sleep(1);
-    print('Nome: ${person.getName()}.');
+
+    print(ColorText.green('=*=') * 10);
     await Time.sleep(1);
-    print('Peso: ${person.getWeight()}.');
+
+    print('${ColorText.cyan('Nome:')} ${ColorText.yellow(person.getName())}.');
     await Time.sleep(1);
-    print('Altura: ${person.getHeight()}.');
+
+    print(
+        '${ColorText.cyan('Peso:')} ${ColorText.yellow(person.getWeight().toString())}.');
     await Time.sleep(1);
-    print('IMC: ${person.getImc()}.');
+
+    print(
+        '${ColorText.cyan('Altura:')} ${ColorText.yellow(person.getHeight().toString())}.');
     await Time.sleep(1);
-    print(person.getMessage()); //mensagem
-    print('=*=' * 10);
+
+    print(
+        '${ColorText.cyan('IMC:')} ${ColorText.yellow(person.getImc().toString())}.');
+    await Time.sleep(1);
+
+    print(ColorText.magenta(person.getMessage()));
+
+    print(ColorText.green('=*=') * 10);
+
     Console.blankSpace(2);
     await Time.sleep(2);
   }
