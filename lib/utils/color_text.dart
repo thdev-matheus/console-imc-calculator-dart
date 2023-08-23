@@ -1,5 +1,5 @@
 class ColorText {
-  static String red(String text) => '\x1B[31m$text/x1B[0m';
+  static String red(String text) => '\x1B[31m$text\x1B[0m';
 
   static String green(String text) => '\x1B[32m$text\x1B[0m';
 

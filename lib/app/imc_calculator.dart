@@ -97,7 +97,7 @@ class IMCCalculator {
     print(ColorText.yellow('Bom, é isso.'));
     await Time.sleep(1);
     print(ColorText.yellow(
-        'Muito obrigado por utilizar a ${ColorText.magenta('Calculadora de IMC')}'));
+        'Muito obrigado por utilizar a ${ColorText.magenta('Calculadora de IMC')}.'));
     await Time.sleep(1);
     print(ColorText.yellow('Siga o desenvolvedor no Linkedin:'));
     await Time.sleep(1);

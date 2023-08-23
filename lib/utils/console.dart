@@ -17,10 +17,10 @@ class Console {
 
         return line;
       } on VoidException {
-        print(VoidException().toString());
+        print(ColorText.red(VoidException().toString()));
         await Time.sleep(1);
 
-        print('Vamos tentar novamente...');
+        print(ColorText.red('Vamos tentar novamente...'));
         await Time.sleep(2);
       }
     } while (true);
@@ -38,13 +38,13 @@ class Console {
 
         return line;
       } on DoubleException {
-        print(DoubleException().toString());
+        print(ColorText.red(DoubleException().toString()));
         await Time.sleep(1);
 
-        print('Por exemplo: 68.7');
+        print(ColorText.red('Por exemplo: 68.7'));
         await Time.sleep(1);
 
-        print('Vamos tentar novamente...');
+        print(ColorText.red('Vamos tentar novamente...'));
         await Time.sleep(2);
       }
     } while (true);
