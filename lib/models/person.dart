@@ -93,7 +93,7 @@ class Person {
       case Status.lightThiness:
         return 'Magreza Leve';
       case Status.healthy:
-        return 'Saldável';
+        return 'Saudável';
       case Status.overweight:
         return 'Sobrepeso';
       case Status.obesity1:
