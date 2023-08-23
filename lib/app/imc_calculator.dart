@@ -1,5 +1,6 @@
 // import 'package:imc_calculator_dart/models/person.dart';
 import 'package:imc_calculator_dart/models/person.dart';
+import 'package:imc_calculator_dart/utils/color_text.dart';
 import 'package:imc_calculator_dart/utils/console.dart';
 import 'package:imc_calculator_dart/utils/time.dart';
 
@@ -17,7 +18,8 @@ class IMCCalculator {
   static Future<void> hello() async {
     print('Bem-vindo(a) à calculadora de IMC.');
     await Time.sleep(1);
-    print('Eu me chamo \x1B[34mTheus\x1B[0m e vou te ajudar neste processo.');
+    print(
+        'Eu me chamo ${ColorText.cyan('Theus')} e vou te ajudar neste processo.');
     await Time.sleep(2);
     Console.blankSpace(2);
 
