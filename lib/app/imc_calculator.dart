@@ -65,7 +65,7 @@ class IMCCalculator {
     await Time.sleep(1);
     print('IMC: ${person.getImc()}.');
     await Time.sleep(1);
-    print(person.getName()); //mensagem
+    print(person.getMessage()); //mensagem
     print('=*=' * 10);
     Console.blankSpace(2);
   }

@@ -7,6 +7,7 @@ class Person {
   late double _height;
   late double _imc;
   late Status _status;
+  late String _message;
 
   void setName(String name) {
     _name = name;
@@ -32,31 +33,53 @@ class Person {
 
   double getImc() => _imc;
 
+  void setMessage(String message) {
+    _message = message;
+  }
+
+  String getMessage() => _message;
+
   void setStatus() {
     switch (getImc()) {
       case < 16:
         _status = Status.severeThinness;
+        setMessage(
+            'Você possui uma magreza severa, deve procurar um nutricionista imediatamente.');
         break;
       case >= 16 && < 17:
         _status = Status.moderateThinness;
+        setMessage(
+            'Você possui uma magreza moderada, deve procurar um nutricionista assim que possível.');
         break;
       case >= 17 && < 18.5:
         _status = Status.lightThiness;
+        setMessage(
+            'Você possui uma leve magreza, deve se atentar à sua alimentação.');
         break;
       case >= 18.5 && < 25:
         _status = Status.healthy;
+        setMessage(
+            'Parabéns, você é saudável e está com o IMC em um excelente nível.');
         break;
       case >= 25 && < 30:
         _status = Status.overweight;
+        setMessage(
+            'Você está com sobrepeso, mas nada que uma boa reeducação alimentar, um corte no refri e outro no miojo não resolva');
         break;
       case >= 30 && < 35:
         _status = Status.obesity1;
+        setMessage(
+            'Você está com obesidade grau 1 e embora não esteja em nível alarmante, é interessante buscar ajuda de um nutricionista assim que possível.');
         break;
       case >= 35 && < 40:
         _status = Status.obesity2;
+        setMessage(
+            'Sinal amarelo! Você está com obesidade de grau 2 e deve procurar um nutricionista e ajuda médica imediatamente.');
         break;
       case >= 40:
         _status = Status.obesity3;
+        setMessage(
+            'Sinal VERMELHO! Você está com obesidade de grau 3 e esta é uma situação bastante delicada. Procure um médico imediatamente.');
         break;
     }
   }
