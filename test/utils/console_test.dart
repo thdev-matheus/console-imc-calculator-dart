@@ -5,7 +5,7 @@ import 'package:imc_calculator_dart/utils/utils.dart';
 import '../mocks.dart';
 
 void main() {
-  group('Método de input de texto do Console', () {
+  group('Classe Console - Método de input de Texto - ', () {
     test('Repete o input quando a entrada é vazia', () async {
       when(mockStdin.readLineSync()).thenReturnInOrder(['', input]);
       await Console.getTextReply(text, mockStdin, mockStdout);
@@ -25,7 +25,7 @@ void main() {
     });
   });
 
-  group('Método de Input de Double do Console', () {
+  group('Classe Console - Método de input de double - ', () {
     test('Repete o input quando a entrada é vazia', () async {
       when(mockStdin.readLineSync()).thenReturnInOrder(['', inputDouble]);
 
@@ -56,7 +56,7 @@ void main() {
     });
   });
 
-  group('Método Show Load', () {
+  group('Classe Console - Método Show Load - ', () {
     test('Saída correta no console', () async {
       await Console.showLoad(text, mockStdout);
 

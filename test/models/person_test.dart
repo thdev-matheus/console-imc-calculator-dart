@@ -3,7 +3,7 @@ import 'package:test/test.dart';
 import '../mocks.dart';
 
 void main() {
-  group('Classe Person', () {
+  group('Classe Person - ', () {
     test('Criação de uma instância Person', () {
       expect(person.runtimeType, equals(Person));
     });
