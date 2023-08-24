@@ -1,9 +1,13 @@
-import 'dart:io';
+import 'dart:io' as io;
 import 'package:imc_calculator_dart/exceptions/exceptions.dart';
 import 'package:imc_calculator_dart/utils/utils.dart';
 
 class Console {
-  static Future<String> getTextReply(String text) async {
+  static Future<String> getTextReply(
+    String text,
+    io.Stdin stdin,
+    io.Stdout stdout,
+  ) async {
     do {
       try {
         stdout.write(text);
@@ -15,16 +19,20 @@ class Console {
 
         return line;
       } on VoidException {
-        print(ColorText.red(VoidException().toString()));
+        stdout.writeln(ColorText.red(VoidException().toString()));
         await Time.sleep(1);
 
-        print(ColorText.red('Vamos tentar novamente...'));
+        stdout.writeln(ColorText.red('Vamos tentar novamente...'));
         await Time.sleep(2);
       }
     } while (true);
   }
 
-  static Future<double> getDoubleReply(String text) async {
+  static Future<double> getDoubleReply(
+    String text,
+    io.Stdin stdin,
+    io.Stdout stdout,
+  ) async {
     do {
       try {
         stdout.write(text);
@@ -36,33 +44,37 @@ class Console {
 
         return line;
       } on DoubleException {
-        print(ColorText.red(DoubleException().toString()));
+        stdout.writeln(ColorText.red(DoubleException().toString()));
         await Time.sleep(1);
 
-        print(ColorText.red('Por exemplo: 68.7'));
+        stdout.writeln(ColorText.red('Por exemplo: 68.7'));
         await Time.sleep(1);
 
-        print(ColorText.red('Vamos tentar novamente...'));
+        stdout.writeln(ColorText.red('Vamos tentar novamente...'));
         await Time.sleep(2);
       }
     } while (true);
   }
 
-  static Future<void> showLoad(String text) async {
+  static Future<void> showLoad(
+    String text,
+    io.Stdout stdout,
+  ) async {
     await Time.sleep(1);
-    print(ColorText.yellow(text));
+    stdout.write(ColorText.yellow(text));
     await Time.sleep(1);
-    print(ColorText.yellow('.'));
+    stdout.write(ColorText.yellow('.'));
     await Time.sleep(1);
-    print(ColorText.yellow('.'));
+    stdout.write(ColorText.yellow('.'));
     await Time.sleep(1);
-    print(ColorText.yellow('.'));
+    stdout.writeln(ColorText.yellow('.'));
     await Time.sleep(1);
+    stdout.writeln('');
   }
 
-  static void blankSpace(int lines) {
+  static void blankSpace(int lines, io.Stdout stdout) {
     for (var i = 0; i < lines; i++) {
-      print('');
+      stdout.writeln('');
     }
   }
 }
